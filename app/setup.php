@@ -186,3 +186,9 @@ add_action('widgets_init', function () {
         'id' => 'sidebar-footer'
     ] + $config);
 });
+
+add_action('init', function () {
+    if (defined('WP_DEBUG') && WP_DEBUG) {
+        flush_rewrite_rules(true);
+    }
+}, 10, 0);

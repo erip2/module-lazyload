@@ -31,6 +31,17 @@ module.exports = (app) =>
       'app/View/**/*.php',
     ])
 
+    .experiments('lazyCompilation', {
+      // disable lazy compilation for dynamic imports
+      imports: false,
+
+      // disable lazy compilation for entries
+      entries: false,
+
+      // do not lazily compile moduleB
+      test: (module) => !/moduleB/.test(module.nameForCondition()),
+    })
+
     /**
      * Target URL to be proxied by the dev server.
      *

@@ -1,18 +1,18 @@
-import {registerBlockStyle, unregisterBlockStyle} from '@wordpress/blocks';
+// import {registerBlockStyle, unregisterBlockStyle} from '@wordpress/blocks';
 
-import {domReady} from '@scripts/components';
+// import {domReady} from '@scripts/components';
 
 /**
  * Customize block styles
  */
-domReady(() => {
+/* domReady(() => {
   unregisterBlockStyle('core/button', 'outline');
 
   registerBlockStyle('core/button', {
     name: 'outline',
     label: 'Outline',
   });
-});
+}); */
 
 /**
  * Accept module updates

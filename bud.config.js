@@ -31,15 +31,13 @@ module.exports = (app) =>
       'app/View/**/*.php',
     ])
 
-    .experiments('lazyCompilation', {
-      // disable lazy compilation for dynamic imports
-      imports: false,
-
-      // disable lazy compilation for entries
-      entries: false,
-
-      // do not lazily compile moduleB
-      test: (module) => !/moduleB/.test(module.nameForCondition()),
+    /**
+     * Define the public path for dynamically imported assets.
+     *
+     * I am defining it an .env file and accessing it with `bud.env`.
+     */
+    .define({
+      ASSET_PATH: JSON.stringify(app.env.get('ASSET_PATH')),
     })
 
     /**

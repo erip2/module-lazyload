@@ -32,6 +32,15 @@ module.exports = (app) =>
     ])
 
     /**
+     * Define the public path for dynamically imported assets.
+     *
+     * I am defining it an .env file and accessing it with `bud.env`.
+     */
+    .define({
+      ASSET_PATH: JSON.stringify(app.env.get('ASSET_PATH')),
+    })
+
+    /**
      * Target URL to be proxied by the dev server.
      *
      * This is your local dev server.

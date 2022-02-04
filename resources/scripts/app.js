@@ -1,3 +1,4 @@
+import './publicPath';
 import {componentsList} from './componentsList';
 
 /**
